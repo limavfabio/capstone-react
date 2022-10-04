@@ -1,12 +1,13 @@
 import React from 'react';
 import style from '../style/FruitBlock.module.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 export default function FruitBlock({ fruit }) {
   return (
-    <div className={style.fruitBlock}>
+    <Link to={`fruitdetails/${fruit.id}`} className={style.fruitBlock}>
       {fruit.id} | {fruit.name}
-    </div>
+    </Link>
   );
 }
 
