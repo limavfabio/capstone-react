@@ -1,0 +1,7 @@
+.fruitBlock {
+  outline: 2px solid red;
+  border-collapse: collapse;
+  text-align: center;
+  height: 5rem;
+  background-color: cyan;
+}
