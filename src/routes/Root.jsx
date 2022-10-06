@@ -1,8 +1,9 @@
 import React from 'react';
 import { useGetFruitsQuery } from '../features/fruits/fruitsApiSlice';
-
 import style from '../style/Root.module.css';
 import FruitBlock from '../components/FruitBlock';
+import Header from '../components/Header';
+import Loading from '../components/Loading';
 
 export default function Root() {
   const {
@@ -16,7 +17,7 @@ export default function Root() {
   let content;
 
   if (isLoading) {
-    content = <div>IT is loading!</div>;
+    content = <Loading />;
   } else if (isSuccess) {
     content = fruits.map((fruit) => (
       <FruitBlock key={fruit.id} fruit={fruit} />
@@ -25,5 +26,10 @@ export default function Root() {
     content = <div>{error.toString()}</div>;
   }
 
-  return <section className={style.container}>{content}</section>;
+  return (
+    <>
+      {isSuccess ? <Header /> : ''}
+      <section className={style.container}>{content}</section>
+    </>
+  );
 }

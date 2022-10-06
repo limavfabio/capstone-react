@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function FruitBlock({ fruit }) {
   return (
     <Link to={`fruitdetails/${fruit.id}`} className={style.fruitBlock}>
-      {fruit.name} | {fruit.id}
+      {fruit.name}
     </Link>
   );
 }
