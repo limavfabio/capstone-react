@@ -1,5 +1,45 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import style from '../style/FruitDetails.module.css';
+
+export async function loader({ params }) {
+  return fetch(
+    `https://api.allorigins.win/raw?url=https://www.fruityvice.com/api/fruit/${params.id}`
+  );
+}
 
 export default function FruitDetails() {
-  return <div>This is the fruit details page</div>;
+  const fruitData = useLoaderData();
+  const fruit = JSON.parse(fruitData);
+
+  console.log(fruit);
+  return (
+    <div className={style.container}>
+      <div className={style.main}>
+        <h1>{fruit.name}</h1>
+        <div>
+          Family:{' '}
+          {fruit.family != 0 ? fruit.family : 'No information available'}
+        </div>
+        <div>
+          Genus: {fruit.genus != 0 ? fruit.genus : 'No information available'}
+        </div>
+        <div>
+          Order: {fruit.order != 0 ? fruit.order : 'No information available'}
+        </div>
+      </div>
+      {fruit.nutritions.calories ? (
+        <div className={style.nutrition}>
+          <h2>Nutrition Information</h2>
+          <div>Calories: {fruit.nutritions.calories}</div>
+          <div>Carbohydrates: {fruit.nutritions.carbohydrates}</div>
+          <div>Fat: {fruit.nutritions.fat}</div>
+          <div>Protein: {fruit.nutritions.protein}</div>
+          <div>Sugar: {fruit.nutritions.sugar}</div>
+        </div>
+      ) : (
+        <h2>No nutritional information available</h2>
+      )}
+    </div>
+  );
 }

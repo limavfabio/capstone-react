@@ -12,7 +12,11 @@ export const fruitsApiSlice = createApi({
     getFruits: builder.query({
       query: () => '/all',
     }),
+
+    getFruitById: builder.query({
+      query: (id) => `${id}`,
+    }),
   }),
 });
 
-export const { useGetFruitsQuery } = fruitsApiSlice;
+export const { useGetFruitsQuery, useGetFruitByIdQuery } = fruitsApiSlice;

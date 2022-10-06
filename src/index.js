@@ -5,7 +5,7 @@ import { store } from './app/store';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/Root';
-import FruitDetails from './routes/FruitDetails';
+import FruitDetails, { loader as fruitLoader } from './routes/FruitDetails';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -16,8 +16,9 @@ const router = createBrowserRouter([
     element: <Root />,
   },
   {
-    path: 'fruitdetails/:fruitId',
+    path: 'fruitdetails/:id',
     element: <FruitDetails />,
+    loader: fruitLoader,
   },
 ]);
 
