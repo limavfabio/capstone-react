@@ -50,6 +50,10 @@ npm start
 
 - Live demo will be available on the first stable release of the app
 
+# Acknowledgements
+
+- The website design was based on the design by Nelson Sakwa. You can see the original design on (https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs))
+
 # Show your support
 
 Kindly give a :hearts: if you like this project.
