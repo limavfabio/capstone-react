@@ -49,7 +49,12 @@ export default function Root() {
   return (
     <>
       {isSuccess ? <Header /> : ''}
-      <input type="text" onChange={(e) => searchItems(e.target.value)} />
+      <input
+        className={style.input}
+        placeholder="Search Fruits"
+        type="text"
+        onChange={(e) => searchItems(e.target.value)}
+      />
       <section className={style.container}>{content}</section>
     </>
   );
