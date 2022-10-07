@@ -13,7 +13,6 @@ export default function FruitDetails() {
   const fruitData = useLoaderData();
   const fruit = JSON.parse(fruitData);
 
-  console.log(fruit);
   return (
     <>
       <Header />
