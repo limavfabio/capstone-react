@@ -1,0 +1,25 @@
+.fruitBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  text-decoration: none;
+  font-size: larger;
+  font-weight: 500;
+}
+
+.fruitBlock:nth-child(4n -1) {
+  background-color: #ffc8dd;
+}
+
+.fruitBlock:nth-child(4n) {
+  background-color: #ffafcc;
+}
+
+.fruitBlock:nth-child(4n -2) {
+  background-color: #ffc8dd;
+}
+
+.fruitBlock:nth-child(4n + 1) {
+  background-color: #ffafcc;
+}
