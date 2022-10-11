@@ -48,7 +48,7 @@ npm start
 
 # Live Demo
 
-- Live demo will be available on the first stable release of the app
+- https://curious-begonia-4dc710.netlify.app/
 
 # Acknowledgements
 
